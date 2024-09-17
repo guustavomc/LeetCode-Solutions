@@ -33,19 +33,13 @@ class Solution {
 
         for(int i=0; i<nums.length;i++){
             if(!newHash.containsKey(nums[i])){
-                System.out.println("indice do for"+ i);
                 newHash.put(nums[i],1);
             }
             else{
-                System.out.println("indice do for"+ i);
                 newHash.put(nums[i], newHash.get(nums[i])+1);
             }
         }
         for(int j=0;j<nums.length;j++){
-            System.out.println("cheguei no segundo for");
-            System.out.println("nums[j]"+ nums[j]);
-            System.out.println(newHash.get(nums[j]) );
-
             if(newHash.get(nums[j])==1){
                 return nums[j];
             }
