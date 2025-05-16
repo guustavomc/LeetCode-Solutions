@@ -21,7 +21,6 @@ Constraints:
 1 <= sum(nums[i].length) <= 1000
 1 <= nums[i][j] <= 1000
 All the values of nums[i] are unique.*/
-import java.util.Collections; 
 class Solution {
     public List<Integer> intersection(int[][] nums) {
 
