@@ -31,24 +31,23 @@ Only one valid answer exists.
 
 class Solution {
     public int[] twoSum(int[] nums, int target) {
-        
-        HashMap<Integer,Integer> newHash = new HashMap<Integer,Integer>();
         int[] result = new int[2];
 
-        for(int i=0;i<nums.length;i++){
+        HashMap<Integer, Integer> alreadyCheckedPositions = new HashMap<Integer,Integer>();
 
-            int missingValue = target-nums[i];
-
-            if(newHash.containsKey(missingValue)){
-                result[0]= i;
-                result[1]=newHash.get(missingValue);
+        for(int i=0; i<nums.length;i++){
+            int missingValue= target-nums[i];
+            if(alreadyCheckedPositions.containsKey(missingValue)){
+                result[0]=i;
+                result[1]= alreadyCheckedPositions.get(missingValue);
                 return result;
-
             }
             else{
-                newHash.put(nums[i],i);
+                alreadyCheckedPositions.put(nums[i], i);
             }
+            
         }
+
         return new int[0];
     }
 }
